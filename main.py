@@ -2,6 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_MainWindow
 from pymongo import MongoClient
+from bson.json_util import dumps
 
 
 UI_FILE = "main.ui"
@@ -21,7 +22,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnQuery.pressed.connect(self.magic)
 
     def magic(self):
-        print(self.mongoClient.admin.command("ping"))
+        found = None
+        personas_collection = self.mongoClient.x.personas
+
+        search_field = ""
+
+        if self.rbtId.isChecked():
+            search_field = "cedula"
+        if self.rbtFirstName.isChecked():
+            search_field = "nombre"
+        if self.rbtId.isChecked():
+            search_field = "apellido"
+
+        found = personas_collection.find({search_field: {"$regex": self.txtSearch.text(), "$options": "i"}})
+
+        print(dumps(found))
 
 
 if __name__ == "__main__":

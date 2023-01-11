@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QLabel,
-    QLineEdit, QListView, QMainWindow, QMenuBar,
-    QPushButton, QRadioButton, QSizePolicy, QStatusBar,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QButtonGroup, QGridLayout, QGroupBox,
+    QLabel, QLineEdit, QListView, QMainWindow,
+    QMenuBar, QPushButton, QRadioButton, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(0, 0, 431, 481))
+        self.groupBox.setGeometry(QRect(0, 0, 481, 481))
         self.verticalLayoutWidget = QWidget(self.groupBox)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
         self.verticalLayoutWidget.setGeometry(QRect(30, 60, 251, 371))
@@ -51,15 +51,35 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.btnQuery)
 
-        self.rbtLastName = QRadioButton(self.groupBox)
-        self.rbtLastName.setObjectName(u"rbtLastName")
-        self.rbtLastName.setGeometry(QRect(320, 100, 82, 17))
-        self.rbtFirstName = QRadioButton(self.groupBox)
+        self.verticalLayoutWidget_3 = QWidget(self.groupBox)
+        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
+        self.verticalLayoutWidget_3.setGeometry(QRect(300, 60, 161, 71))
+        self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.rbtFirstName = QRadioButton(self.verticalLayoutWidget_3)
+        self.buttonGroup = QButtonGroup(MainWindow)
+        self.buttonGroup.setObjectName(u"buttonGroup")
+        self.buttonGroup.addButton(self.rbtFirstName)
         self.rbtFirstName.setObjectName(u"rbtFirstName")
-        self.rbtFirstName.setGeometry(QRect(320, 60, 81, 17))
+
+        self.verticalLayout_3.addWidget(self.rbtFirstName)
+
+        self.rbtLastName = QRadioButton(self.verticalLayoutWidget_3)
+        self.buttonGroup.addButton(self.rbtLastName)
+        self.rbtLastName.setObjectName(u"rbtLastName")
+
+        self.verticalLayout_3.addWidget(self.rbtLastName)
+
+        self.rbtId = QRadioButton(self.verticalLayoutWidget_3)
+        self.buttonGroup.addButton(self.rbtId)
+        self.rbtId.setObjectName(u"rbtId")
+
+        self.verticalLayout_3.addWidget(self.rbtId)
+
         self.groupBox_2 = QGroupBox(self.centralwidget)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setGeometry(QRect(430, 0, 491, 131))
+        self.groupBox_2.setGeometry(QRect(480, 0, 441, 131))
         self.verticalLayoutWidget_2 = QWidget(self.groupBox_2)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
         self.verticalLayoutWidget_2.setGeometry(QRect(50, 30, 381, 79))
@@ -114,11 +134,13 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Query", None))
         self.btnQuery.setText(QCoreApplication.translate("MainWindow", u"Query", None))
-        self.rbtLastName.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
         self.rbtFirstName.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
+        self.rbtLastName.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
+        self.rbtId.setText(QCoreApplication.translate("MainWindow", u"Document Number", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Insert", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
         self.btnInsert.setText(QCoreApplication.translate("MainWindow", u"Insert", None))
+        self.rbtFirstName.setChecked(True)
     # retranslateUi
 

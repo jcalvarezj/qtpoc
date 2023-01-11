@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>431</width>
+      <width>481</width>
       <height>481</height>
      </rect>
     </property>
@@ -51,39 +51,55 @@
       </item>
      </layout>
     </widget>
-    <widget class="QRadioButton" name="rbtLastName">
+    <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>100</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Last Name</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rbtFirstName">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
+       <x>300</x>
        <y>60</y>
-       <width>81</width>
-       <height>17</height>
+       <width>161</width>
+       <height>71</height>
       </rect>
      </property>
-     <property name="text">
-      <string>First Name</string>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="rbtFirstName">
+        <property name="text">
+         <string>First Name</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbtLastName">
+        <property name="text">
+         <string>Last Name</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbtId">
+        <property name="text">
+         <string>Document Number</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>480</x>
       <y>0</y>
-      <width>491</width>
+      <width>441</width>
       <height>131</height>
      </rect>
     </property>
@@ -149,4 +165,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
