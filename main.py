@@ -19,11 +19,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mongoClient = mongoClient
         self.setupUi(self)
 
-        self.btnQuery.pressed.connect(self.magic)
+        self.btnQuery.pressed.connect(self.query_action)
 
-    def magic(self):
+    def query_action(self):
         found = None
-        personas_collection = self.mongoClient.x.personas
+        personas_collection = self.mongoClient.x.personas # Using database "x"
 
         search_field = ""
 
