@@ -9,9 +9,10 @@
 ################################################################################
 
 from PySide6.QtCore import QCoreApplication, QMetaObject, QRect
-from PySide6.QtWidgets import (QButtonGroup, QGridLayout, QGroupBox,
-    QLabel, QLineEdit, QListView, QMenuBar, QPushButton, QRadioButton,
-    QStatusBar, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QButtonGroup, QGridLayout, QGroupBox, QLabel,
+                               QLineEdit, QListWidget, QMenuBar, QPushButton,
+                               QRadioButton, QStatusBar, QVBoxLayout, QWidget)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -34,7 +35,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.txtSearch)
 
-        self.lvwData = QListView(self.verticalLayoutWidget)
+        self.lvwData = QListWidget(self.verticalLayoutWidget)
         self.lvwData.setObjectName(u"lvwData")
 
         self.verticalLayout.addWidget(self.lvwData)

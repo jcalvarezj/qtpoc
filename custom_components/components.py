@@ -7,16 +7,19 @@ from custom_components.ui_dialog import Ui_Dialog
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, mongoClient):
+    def __init__(self, mongo_client, db_name):
         super().__init__()
-        self.mongoClient = mongoClient
+        self.mongo_client = mongo_client
+        self.db_name = db_name
         self.setupUi(self)
 
         self.btnQuery.pressed.connect(self.query_action)
 
     def query_action(self):
+        self.lvwData.clear()
+
         found = None
-        personas_collection = self.mongoClient.x.personas # Using database "x"
+        personas_collection = self.mongo_client[self.db_name].personas
 
         search_field = ""
 
@@ -29,7 +32,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         found = personas_collection.find({search_field: {"$regex": self.txtSearch.text(), "$options": "i"}})
 
-        print(dumps(found))
+        for person in found:
+            self.lvwData.addItem(f"{person['nombre']} {person['apellido']} ({person['cedula']})")
 
 
 class Dialog(QDialog, Ui_Dialog):
