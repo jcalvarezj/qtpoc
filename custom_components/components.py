@@ -27,7 +27,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             search_field = "cedula"
         if self.rbtFirstName.isChecked():
             search_field = "nombre"
-        if self.rbtId.isChecked():
+        if self.rbtLastName.isChecked():
             search_field = "apellido"
 
         found = personas_collection.find({search_field: {"$regex": self.txtSearch.text(), "$options": "i"}})
