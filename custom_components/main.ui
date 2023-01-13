@@ -43,7 +43,7 @@
        <widget class="QListWidget" name="lvwData"/>
       </item>
       <item>
-       <widget class="QPushButton" name="btnQuery">
+       <widget class="QPushButton" name="btn_query">
         <property name="text">
          <string>Query</string>
         </property>
@@ -62,7 +62,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QRadioButton" name="rbtFirstName">
+       <widget class="QRadioButton" name="rbt_first_name">
         <property name="text">
          <string>First Name</string>
         </property>
@@ -75,7 +75,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rbtLastName">
+       <widget class="QRadioButton" name="rbt_last_name">
         <property name="text">
          <string>Last Name</string>
         </property>
@@ -85,7 +85,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rbtId">
+       <widget class="QRadioButton" name="rbt_id">
         <property name="text">
          <string>Document Number</string>
         </property>
@@ -103,7 +103,7 @@
       <x>480</x>
       <y>0</y>
       <width>441</width>
-      <height>131</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="title">
@@ -112,39 +112,49 @@
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>20</x>
        <y>30</y>
-       <width>381</width>
-       <height>79</height>
+       <width>411</width>
+       <height>141</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="txtFirstName"/>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>First Name</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="txtLastName"/>
-        </item>
-        <item row="1" column="1">
+        <item row="2" column="1">
          <widget class="QLabel" name="label_2">
           <property name="text">
            <string>Last Name</string>
           </property>
          </widget>
         </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>First Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Doc. Num.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="txt_id"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="txt_first_name"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="txt_last_name"/>
+        </item>        
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="btnInsert">
+       <widget class="QPushButton" name="btn_insert">
         <property name="text">
          <string>Insert</string>
         </property>
